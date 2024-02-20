@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var speed = 400
+@export var speed = 100
 
 var screen_size
 var current_weapon = false
@@ -13,7 +13,7 @@ func pick(item):
 	print(current_weapon)	
 	
 func get_input(delta):
-	var velocity = Vector2.ZERO # The player's movement vector.
+	velocity = Vector2.ZERO # The player's movement vector.
 	if Input.is_action_pressed("right"):
 		velocity.x += 1
 	if Input.is_action_pressed("left"):
@@ -34,18 +34,23 @@ func get_input(delta):
 	if velocity.x != 0:
 		if current_weapon == true:
 			$AnimatedSprite2D.animation = "gun"
+			rotation = 0
 			$AnimatedSprite2D.flip_h = velocity.x < 0	
 		else:
 			$AnimatedSprite2D.animation = "walk"
-			$AnimatedSprite2D.flip_h = velocity.x < 0	
+			$AnimatedSprite2D.flip_h = velocity.x < 0
+			rotation = 0	
 		
 	elif velocity.y != 0:
 		if current_weapon == true:
 			$AnimatedSprite2D.animation = "gun"
-			$AnimatedSprite2D.flip_v = velocity.y > 0
+			rotation = 90
+			$AnimatedSprite2D.flip_h = velocity.y < 0
 		else:
-			$AnimatedSprite2D.animation = "up"
-			$AnimatedSprite2D.flip_v = velocity.y < 0
+			$AnimatedSprite2D.animation = "walk"
+			rotation = 90
+			$AnimatedSprite2D.flip_h = velocity.y < 0
+			
 		
 	
 	
