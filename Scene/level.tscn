@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://ced5y1ylrgtw4"]
+
+[ext_resource type="Texture2D" uid="uid://dfsf3lavajsv6" path="res://Texture/desert.jpg" id="1_14ij3"]
+[ext_resource type="PackedScene" uid="uid://cijdil3mquund" path="res://Scene/player.tscn" id="2_1ewq2"]
+
+[node name="Level" type="Node2D"]
+
+[node name="Desert" type="Sprite2D" parent="."]
+position = Vector2(431.25, 319.75)
+scale = Vector2(0.2885, 0.320731)
+texture = ExtResource("1_14ij3")
+
+[node name="Player" parent="." instance=ExtResource("2_1ewq2")]
+position = Vector2(406, 321)
