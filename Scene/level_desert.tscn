@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://ced5y1ylrgtw4"]
+
+[ext_resource type="Script" path="res://Script/level_desert.gd" id="1_o5r5o"]
+[ext_resource type="Texture2D" uid="uid://dfsf3lavajsv6" path="res://Texture/desert.jpg" id="2_7lbyr"]
+[ext_resource type="PackedScene" uid="uid://cijdil3mquund" path="res://Scene/player.tscn" id="3_45av6"]
+[ext_resource type="PackedScene" uid="uid://blap02lgk2d15" path="res://Scene/pistol.tscn" id="4_ki8ky"]
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_o5r5o")
+
+[node name="Desert" type="Sprite2D" parent="."]
+position = Vector2(431.25, 319.75)
+scale = Vector2(0.2885, 0.320731)
+texture = ExtResource("2_7lbyr")
+
+[node name="Player" parent="." instance=ExtResource("3_45av6")]
+position = Vector2(406, 321)
+
+[node name="Pistol" parent="." instance=ExtResource("4_ki8ky")]
+position = Vector2(242, 211)

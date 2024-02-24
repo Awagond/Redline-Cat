@@ -160,7 +160,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"gun",
-"speed": 30.0
+"speed": 17.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -189,7 +189,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk",
-"speed": 30.0
+"speed": 8.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ddqg6"]
@@ -202,9 +202,7 @@ script = ExtResource("1_orge7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_322vu")
-animation = &"gun"
-frame = 16
-frame_progress = 1.0
+animation = &"walk"
 flip_h = true
 flip_v = true
 

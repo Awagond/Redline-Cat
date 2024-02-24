@@ -7,7 +7,7 @@ func get_player():
 	
 func _ready(): #Спавн пистолета.
 	var weapon = item.instantiate()
-	$Item.add_child(weapon)
+#	$Item.add_child(weapon)
 	weapon.set_item("pistol")
 	weapon.position = Vector2(int(randf_range(10,300)), int(randf_range(10,300)))
 	pass

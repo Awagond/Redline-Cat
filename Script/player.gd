@@ -44,11 +44,11 @@ func get_input(delta):
 	elif velocity.y != 0:
 		if current_weapon == true:
 			$AnimatedSprite2D.animation = "gun"
-			rotation = 90
+			rotation = 89
 			$AnimatedSprite2D.flip_h = velocity.y < 0
 		else:
 			$AnimatedSprite2D.animation = "walk"
-			rotation = 90
+			rotation = 89
 			$AnimatedSprite2D.flip_h = velocity.y < 0
 			
 		
