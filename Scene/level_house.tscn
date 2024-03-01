@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://btg4senylw8pc"]
 
 [ext_resource type="Script" path="res://Script/level_house.gd" id="1_u2y6j"]
-[ext_resource type="PackedScene" uid="uid://c0wrbujivkp1q" path="res://Scene/res/tile_map.tscn" id="2_y8qlf"]
+[ext_resource type="PackedScene" uid="uid://c0wrbujivkp1q" path="res://Scene/tile_map.tscn" id="2_y8qlf"]
 [ext_resource type="PackedScene" uid="uid://blap02lgk2d15" path="res://Scene/pistol.tscn" id="5_nbx4h"]
 [ext_resource type="PackedScene" uid="uid://cijdil3mquund" path="res://Scene/player.tscn" id="6_rj6sr"]
 

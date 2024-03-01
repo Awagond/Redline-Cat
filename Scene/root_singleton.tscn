@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ckfskcco6d86s"]
+
+[ext_resource type="Script" path="res://Scene/root_singleton.gd" id="1_fqcb0"]
+
+[node name="root_singleton" type="Node"]
+script = ExtResource("1_fqcb0")
