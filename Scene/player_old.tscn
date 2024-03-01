@@ -1,0 +1,88 @@
+[gd_scene load_steps=13 format=3 uid="uid://bdgu6jaq6no5h"]
+
+[ext_resource type="Texture2D" uid="uid://ir4k57opf4jr" path="res://Texture/Player/HM_Player_Walk.png" id="1_q04fp"]
+[ext_resource type="Script" path="res://Script/player_old.gd" id="1_wck50"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lwsqm"]
+atlas = ExtResource("1_q04fp")
+region = Rect2(0, 0, 60, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e6g8m"]
+atlas = ExtResource("1_q04fp")
+region = Rect2(60, 0, 60, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kgh42"]
+atlas = ExtResource("1_q04fp")
+region = Rect2(120, 0, 60, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6lx2u"]
+atlas = ExtResource("1_q04fp")
+region = Rect2(180, 0, 60, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oc2ud"]
+atlas = ExtResource("1_q04fp")
+region = Rect2(240, 0, 60, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w4s50"]
+atlas = ExtResource("1_q04fp")
+region = Rect2(300, 0, 60, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4cld1"]
+atlas = ExtResource("1_q04fp")
+region = Rect2(360, 0, 60, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qa2pt"]
+atlas = ExtResource("1_q04fp")
+region = Rect2(420, 0, 60, 60)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uvdvd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lwsqm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e6g8m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kgh42")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6lx2u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oc2ud")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w4s50")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4cld1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qa2pt")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 8.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yesq6"]
+radius = 21.0
+height = 42.0
+
+[node name="Player" type="Area2D"]
+position = Vector2(313, 309)
+script = ExtResource("1_wck50")
+speed = 2
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_uvdvd")
+animation = &"walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_yesq6")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

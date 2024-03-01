@@ -2,8 +2,8 @@ extends Node2D
 
 var item = preload("res://Scene/pistol.tscn")
 
-func get_player():
-	return $Player
+#func get_player():
+#	return $Player
 	
 func _ready(): #Спавн пистолета.
 	var weapon = item.instantiate()
