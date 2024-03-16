@@ -11,7 +11,8 @@ var world
 var player
 
 var level
-var level_name = 'level_house'
+var level_name = 'house'
+var level_point = 'start'
 
 
 func exit():
@@ -22,12 +23,22 @@ func _ready():
 
 	
 func load_level(): #скрипт для смены сцены
-	level = load("res://Scene/" + level_name + ".tscn").instantiate()
+	level = load("res://Scene/level_" + level_name + ".tscn").instantiate()
 	#var inst = level.instantiate()
 	world.add_child(level)
+	
+	var lp = level.get_node('point_'+level_point)
+	if lp:
+		player.position = lp.position
+		#player.get_node('Camera2D').position = player.position
 
 func reload():
 	get_tree().reload_current_scene()
+
+func locate(ln, lp):
+	level_name = ln
+	level_point = lp
+	reload()
 
 ##func hello():
 #	print('hello?') # тест метода global скрипта

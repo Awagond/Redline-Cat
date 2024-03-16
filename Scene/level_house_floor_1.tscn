@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://b633el3d5h532"]
+[gd_scene load_steps=3 format=3 uid="uid://b633el3d5h532"]
 
 [ext_resource type="PackedScene" uid="uid://c0wrbujivkp1q" path="res://Scene/tile_map.tscn" id="1_blk0j"]
+[ext_resource type="PackedScene" uid="uid://bqfplb6flsacp" path="res://Scene/teleport.tscn" id="2_tqhb3"]
 
 [node name="Level_2" type="Node2D"]
 
@@ -10,3 +11,20 @@ layer_1/tile_data = PackedInt32Array(11, 8, 65536, 65547, 8, 327680, 131083, 8, 
 layer_2/tile_data = PackedInt32Array()
 layer_4/tile_data = PackedInt32Array(917504, 8, 196608, 0, 8, 65536, 23, 8, 65536, 917527, 8, 196608, 393216, 8, 196608, 393226, 8, 196608, 196624, 8, 65536, 196622, 8, 65536)
 layer_5/tile_data = PackedInt32Array(917504, 8, 327680, 0, 8, 327680, 917527, 8, 262144, 23, 8, 262144, 917520, 8, 262144, 16, 8, 262144, 589838, 8, 327680, 11, 8, 327680, 917515, 8, 327680, 196622, 8, 327680)
+
+[node name="point_downstairs" type="Marker2D" parent="."]
+position = Vector2(496, 228)
+
+[node name="tp_upstairs" parent="." instance=ExtResource("2_tqhb3")]
+position = Vector2(475, 192)
+level_name = "house"
+level_point = "upstairs"
+
+[node name="tp_desert" parent="." instance=ExtResource("2_tqhb3")]
+position = Vector2(554, 404)
+rotation = -1.5708
+level_name = "desert"
+level_point = "desert"
+
+[node name="point_from_desert" type="Marker2D" parent="."]
+position = Vector2(511, 381)
