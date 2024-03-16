@@ -28,3 +28,11 @@ level_point = "desert"
 
 [node name="point_from_desert" type="Marker2D" parent="."]
 position = Vector2(511, 381)
+
+[node name="point_house" type="Marker2D" parent="."]
+position = Vector2(450, 433)
+
+[node name="tp_outdoor" parent="." instance=ExtResource("2_tqhb3")]
+position = Vector2(427, 493)
+level_name = "street"
+level_point = "outdoor"
