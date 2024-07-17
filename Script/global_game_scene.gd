@@ -5,7 +5,7 @@ extends Node
 # взять ассеты с itch.io
 
 func _ready():
-	G.game = self
-	G.world = $world
-	G.player = $world/Player
-	G.load_level()
+	G.game = self # хз, либо не помню, либо так и не узнал
+	G.world = $world # передача переменной в виде сцены уровня
+	G.player = $world/Player # передача переменной в виде сцены с персонажем
+	G.load_level() # запуск функции из global-скрипта по запуску уровня

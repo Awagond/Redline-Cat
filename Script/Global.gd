@@ -12,7 +12,7 @@ var player
 
 var level
 var level_name = 'house'
-var level_point = 'start'
+var level_point = 'start' # задана точка для спавна в первый раз
 
 
 func exit():

@@ -262,8 +262,6 @@ bullet = ExtResource("2_o0ado")
 scale = Vector2(1.012, 1)
 sprite_frames = SubResource("SpriteFrames_322vu")
 animation = &"gun"
-frame = 2
-frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_ddqg6")
