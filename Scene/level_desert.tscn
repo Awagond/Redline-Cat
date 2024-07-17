@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Script/level_desert.gd" id="1_o5r5o"]
 [ext_resource type="Texture2D" uid="uid://dfsf3lavajsv6" path="res://Texture/desert.jpg" id="2_7lbyr"]
-[ext_resource type="PackedScene" uid="uid://bqfplb6flsacp" path="res://Scene/teleport.tscn" id="3_l25vg"]
+[ext_resource type="PackedScene" uid="uid://bqfplb6flsacp" path="res://Texture/Floor/Scene/teleport.tscn" id="3_l25vg"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_o5r5o")

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://b5lpkou3txyjm"]
 
-[ext_resource type="PackedScene" uid="uid://c0wrbujivkp1q" path="res://Scene/tile_map.tscn" id="1_yp2ht"]
-[ext_resource type="PackedScene" uid="uid://bqfplb6flsacp" path="res://Scene/teleport.tscn" id="2_o0r4p"]
+[ext_resource type="PackedScene" uid="uid://c0wrbujivkp1q" path="res://Texture/Floor/Scene/tile_map.tscn" id="1_yp2ht"]
+[ext_resource type="PackedScene" uid="uid://bqfplb6flsacp" path="res://Texture/Floor/Scene/teleport.tscn" id="2_o0r4p"]
 
 [node name="level_street" type="Node2D"]
 

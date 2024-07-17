@@ -1,19 +1,28 @@
 extends CharacterBody2D
 
 @export var speed = 100
+@export var bullet : PackedScene
+
+var bulletTimer : Timer = Timer.new()
 
 var screen_size
-var current_weapon = false
+var currentWeapone
 
 func _ready():
 	screen_size = get_viewport_rect().size
-	
-func pick(item):
-	current_weapon = true
-	print(current_weapon)	
-	
+	bulletTimer.wait_time = 0.5
+	bulletTimer.one_shot = true
+	add_child(bulletTimer)
+
+func shoot():
+	bulletTimer.start()
+	var b = bullet.instantiate()
+	owner.add_child(b)
+	b.transform = $Node2D/Marker2D.global_transform
+
+
 func get_input(delta):
-	velocity = Vector2.ZERO # The player's movement vector.
+	var velocity = Vector2.ZERO # The player's movement vector.
 	if Input.is_action_pressed("right"):
 		velocity.x += 1
 	if Input.is_action_pressed("left"):
@@ -22,38 +31,31 @@ func get_input(delta):
 		velocity.y += 1
 	if Input.is_action_pressed("up"):
 		velocity.y -= 1
-		
+	if Input.is_action_pressed("shift"):
+		position += velocity * delta * speed
+	if Input.is_action_pressed("shoot") and bulletTimer.is_stopped():
+		shoot()
+	if Input.is_action_pressed("interactive"):
+		$AnimatedSprite2D.animation = "gun"
+
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
 		$AnimatedSprite2D.play()
 	else:
-		$AnimatedSprite2D.stop()
-	
+		$AnimatedSprite2D.animation = "idle"
+		
 	position += velocity * delta
-	position = position.clamp(Vector2.ZERO, screen_size)
 	if velocity.x != 0:
-		if current_weapon == true:
-			$AnimatedSprite2D.animation = "gun"
-			rotation = 0
-			$AnimatedSprite2D.flip_h = velocity.x < 0	
-		else:
-			$AnimatedSprite2D.animation = "walk"
-			$AnimatedSprite2D.flip_h = velocity.x < 0
-			rotation = 0	
-		
-	elif velocity.y != 0:
-		if current_weapon == true:
-			$AnimatedSprite2D.animation = "gun"
-			rotation = 89
-			$AnimatedSprite2D.flip_h = velocity.y < 0
-		else:
-			$AnimatedSprite2D.animation = "walk"
-			rotation = 89
-			$AnimatedSprite2D.flip_h = velocity.y < 0
-			
-		
+		$AnimatedSprite2D.animation = "walk"
+		$AnimatedSprite2D.flip_v = false
+		$AnimatedSprite2D.flip_h = velocity.x < 0
+	elif velocity.y < 0:
+		$AnimatedSprite2D.animation = "walkUp"
+	elif velocity.y > 0:
+		$AnimatedSprite2D.animation = "walkDown"	
 	
-	
-func _physics_process(delta):
+func _process(delta):
+	$Node2D.look_at(get_global_mouse_position())
 	get_input(delta)
 	move_and_slide()
+	

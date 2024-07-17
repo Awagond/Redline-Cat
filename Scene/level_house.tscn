@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://btg4senylw8pc"]
+[gd_scene load_steps=5 format=3 uid="uid://btg4senylw8pc"]
 
 [ext_resource type="Script" path="res://Script/level_house.gd" id="1_u2y6j"]
 [ext_resource type="PackedScene" uid="uid://c0wrbujivkp1q" path="res://Scene/tile_map.tscn" id="2_y8qlf"]
 [ext_resource type="PackedScene" uid="uid://bqfplb6flsacp" path="res://Scene/teleport.tscn" id="3_f761w"]
+[ext_resource type="PackedScene" uid="uid://blap02lgk2d15" path="res://Scene/pistol.tscn" id="4_pxpt0"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_u2y6j")
@@ -22,3 +23,6 @@ level_point = "downstairs"
 
 [node name="point_upstairs" type="Marker2D" parent="."]
 position = Vector2(496, 182)
+
+[node name="Pistol" parent="." instance=ExtResource("4_pxpt0")]
+position = Vector2(224, 310)
