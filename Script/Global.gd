@@ -11,7 +11,7 @@ var world
 var player
 
 var level
-var level_name = 'house'
+var level_name = 'forest'
 var level_point = 'start' # задана точка для спавна в первый раз
 
 
