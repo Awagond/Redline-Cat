@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://cijdil3mquund"]
+[gd_scene load_steps=38 format=3 uid="uid://cijdil3mquund"]
 
 [ext_resource type="Script" path="res://Script/player.gd" id="1_orge7"]
 [ext_resource type="PackedScene" uid="uid://b2i3tgr1sh5b7" path="res://Scene/bullet.tscn" id="2_o0ado"]
@@ -253,6 +253,11 @@ animations = [{
 radius = 7.0
 height = 28.0
 
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_vowsr"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(190, 110)
 script = ExtResource("1_orge7")
@@ -278,3 +283,6 @@ drag_vertical_enabled = true
 
 [node name="Marker2D" type="Marker2D" parent="Node2D"]
 position = Vector2(25, 0)
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_vowsr")
